@@ -1,0 +1,108 @@
+
+% -------------------- From Template -------------------
+
+% So "_" will work in URLs when using BibTeX.
+\usepackage[T1]{fontenc}
+
+% The mathtools package
+% (see http://mirror.utexas.edu/ctan/macros/latex/required/amsmath/amsmath.pdf)
+% loads the amsmath package which defines the
+%     align
+%     align*
+%     alignat
+%     alignat*
+%     equation
+%     equation*
+%     flalign
+%     flalign*
+%     gather
+%     gather*
+%     multitaper
+%     multitaper*
+%     split
+% environments and extends amsmath by defining many other commands.
+% See
+%     https://ctan.org/pkg/amsmath
+% for information about amsmath and
+%     http://ctan.math.washington.edu/tex-archive/macros/latex/contrib/mathtools/mathtools.pdf
+% for information about mathtools.
+\usepackage{mathtools}
+
+% Define \FigureDash.
+% \FigureDash is a dash the width of a digit in the current font.
+\usepackage{pa-figure-dash}
+
+% For PurdueThesis, PuTh, TeX, LaTeX, METAFONT, METAPOST, etc. related logos.
+\usepackage{pa-logos}
+
+% (Or maybe use isomath instead?  -mark  2021-06-20)
+% Follow ISO 80000-2:2019
+%     o   put e, i, j, and pi in upright font automatically
+%     o   use, for example, "\di x" to get "\,mathrm{d}\/x"
+% This loads
+%     o   amsmath.sty (which is already loaded above)
+%     o   mathtools.sty
+%     o   upgreek.sty
+% Load the package.
+\usepackage{pa-mismath}
+    % Tell mismath to put e, i, j, and pi in upright font automatically.
+    \enumber
+    \inumber
+    \jnumber
+    \pinumber
+  % To typeset math italic e, i, j, and pi use
+  %     \mathit e
+  %     \mathit i
+  %     \mathit j
+  %     \itpi
+
+
+% Define \FloatBarrier
+\usepackage{placeins}
+
+% For highlighting text using \hl
+\usepackage{soul}
+
+% For \sfrac, used to do slanted fractions, similar to, e.g., 1/2, but 1 is small and high and 2 is small and low.
+\usepackage{xfrac}
+
+% For typographical conventions stuff including
+%     \Emph{...}
+%     \First{...}
+%     \Keys{...}
+%     \Literal{...}
+%     \Menu{...}
+%     \Place{...}
+%     \Shell{...}
+% This must be after
+%     \usepackage{tikz}
+\usepackage{pa-typographic-conventions}
+
+
+% ----------------- Added Dependencies -----------------
+
+% Generate lorem ipsum 
+%    e.g.: \lipsum[1-2]
+\usepackage{lipsum}
+
+
+
+% cleveref
+%   For easier cross-referencing
+%   Redefine the subref formatting so that you get:
+%     Figure 1.1(a) instead of Figure 1.1a
+\usepackage[noabbrev, capitalise]{cleveref}
+  \captionsetup[subfigure]{subrefformat=simple,labelformat=simple}
+  \renewcommand\thesubfigure{(\alph{subfigure})}
+
+% Put table captions on top / adjust the spacing
+\captionsetup[table]{
+    position=above,
+    belowskip=4pt
+  }
+% \usepackage[skip=3.5\baselineskip]{caption}
+% \captionsetup[table]{0.5\baselineskip}
+% \captionsetup[table]{skip=90pt}
+% \usepackage{float}
+%   \floatstyle{plaintop}
+%   \restylefloat{table}

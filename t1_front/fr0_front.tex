@@ -1,0 +1,18 @@
+
+% Only include these sections if this is a proof or final version
+\ifthenelse{\boolean{proof-or-final}}{
+    \input{t1_front/fr1_comittee.tex}
+    \input{t1_front/fr2_dedication.tex}
+    \input{t1_front/fr3_acknowledgments.tex}
+    \input{t1_front/fr4_preface.tex}
+    %
+    \pdfbookmark{TABLE OF CONTENTS}{Contents}
+    \tableofcontents
+    \listoftables
+    \listoffigures
+}{}
+
+% Optional: Symbols, Abbreviations, Nomenclature, Glossary
+
+% Always include the abstract
+\input{t1_front/fr5_abstract.tex}

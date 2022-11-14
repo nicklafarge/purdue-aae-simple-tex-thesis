@@ -1,0 +1,241 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Removed commands/configurations from purdue template that may be helpful in the future
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% fancyvrb      (for typesetting code)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Define
+%    \VerbatimInput[options]{filename}
+%    \begin{VerbatimOut}{filename} ... \end{VerbatimOut}.
+% \usepackage{fancyvrb}
+  % \DefineShortVerb{\|}  % so "|verbatim|" will be verbatim
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% To let {\bfseries\scshape text} work as expected.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% See
+%     https://tex.stackexchange.com/questions/27411/small-caps-and-bold-face
+% \usepackage{bold-extra} % TODO not sure if this is actually needed
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% cryptocode     (pseudocode, algorithms, protocols)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% For typesetting cryptography pseudocode, algorithms, and protocols.
+% See
+%     https://mirror.las.iastate.edu/tex-archive/macros/latex/contrib/cryptocode/cryptocode.pdf
+% \usepackage
+% [
+%   n,            % or lambda
+%   advantage,
+%   operators,
+%   sets,
+%   adversary,
+%   landau,
+%   probability,
+%   notions,
+%   logic,
+%   ff,
+%   mm,
+%   primitives,
+%   events,
+%   complexity,
+%   oracles,
+%   asymptotics,
+%   keys,
+% ]
+% {cryptocode}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% enumitem     (customize lists)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Redefine description, enumerate, and itemize lists.
+% See
+%     https://mirrors.concertpass.com/tex-archive/macros/latex/contrib/enumitem/enumitem.pdf
+% \usepackage{enumitem}
+% \setlist[itemize]{leftmargin=7pt,rightmargin=24pt}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Control sequence error fix
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% This gets rid of
+%     [5] (./thesis.toc
+%     ! Undefined control sequence.
+%     \vbox_set:Nn ...box:D {\color_group_begin: #2\par
+%                                                       \color_group_end: }
+%     l.32 ...}Basic Circuit Components}{31}{section.67}
+%                                                       %
+%     ?
+% and
+%     [6]
+%     ! Undefined control sequence.
+%     \vbox_set:Nn ...box:D {\color_group_begin: #2\par
+%                                                       \color_group_end: }
+%     l.61 ...rline {P.1}Frenchspacing}{67}{section.445}
+%                                                       %
+%     ?
+% errors.
+% See
+%     https://github.com/latex3/latex2e/issues/73
+% \usepackage{etoc}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% INDEX at the end of the document
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% For indexing.  Making an index is optional.
+% Make these commands available:
+%     COMMAND           DESCRIPTION
+%     \index{string}    put "string" in index information
+%     \makeindex        save information to make the index
+%     \printindex       print the index
+% See
+%     https://ctan.org/pkg/makeidx?lang=en
+% for more information.
+% \usepackage{makeidx}
+  % By default \index ignores its argument.
+  % This activates indexing.
+  % \makeindex
+  % The "chapter name" for the index.
+  % \renewcommand{\indexname}{INDEX}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Definitions for creating the colophen (debug page).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+  % Define
+%    \VerbatimInput[options]{filename}
+%    \begin{VerbatimOut}{filename} ... \end{VerbatimOut}.
+% \usepackage{fancyvrb}
+% \DefineShortVerb{\|}  % so "|verbatim|" will be verbatim
+
+% % This gets rid of
+% %     [5] (./thesis.toc
+% %     ! Undefined control sequence.
+% %     \vbox_set:Nn ...box:D {\color_group_begin: #2\par
+% %                                                       \color_group_end: }
+% %     l.32 ...}Basic Circuit Components}{31}{section.67}
+% %                                                       %
+% %     ?
+% % and
+% %     [6]
+% %     ! Undefined control sequence.
+% %     \vbox_set:Nn ...box:D {\color_group_begin: #2\par
+% %                                                       \color_group_end: }
+% %     l.61 ...rline {P.1}Frenchspacing}{67}{section.445}
+% %                                                       %
+% %     ?
+% % errors.
+% % See
+% %     https://github.com/latex3/latex2e/issues/73
+% \usepackage{etoc}
+
+
+% % Define \I.
+% % \I1 does \indent once, \I2 does \indent twice, etc.
+% \newcommand{\I}[1]{\MyRepeat{\indent}{#1}}
+
+% % Define \MyI.
+% % Typeset my input.
+% \long\def\MyI#1%
+%   {%
+%     {%
+%       \fontsize{8}{10}\tt
+%       \VerbatimInput
+%         [
+%           firstnumber = 1,
+%           numbers     = left,
+%           xleftmargin = 0.33in,
+%         ]%
+%         {#1}
+%     }%
+%   }
+
+% % Define \MyIO.
+% % Typeset my input and output.
+% % The input will all be on the same page.
+% % The output may be split over multiple pages.
+% \newcommand{\MyIO}
+%   {%
+%     \input{z.out}
+
+%     {%
+%       \fontsize{8}{10}\tt
+%       \VerbatimInput
+%         [
+%           firstnumber = 1,
+%           numbers     = left,
+%           xleftmargin = 0.33in,
+%         ]
+%         {z.out}
+%     }
+%     \FloatBarrier
+%   }
+
+% % Define \MyIOS.
+% % Typeset my input and output.
+% % The input may be split over multiple pages.
+% % The output may be split over multiple pages.
+% % This doesn't work right:
+% %     o  Putting a \vbox around the input and output
+% %        does not allow todoindex entries to be listed.
+% %     o  Using \vfilneg at beginning and end of definition
+% %        screws up vertical spacing.
+% % \newcommand{\MyIOS}
+% % {%
+% %   \input{z.out}
+% %
+% %   {%
+% %     \fontsize{8}{10}\tt
+% %     \VerbatimInput
+% %     [
+% %       firstnumber = 1,
+% %       numbers     = left,
+% %       xleftmargin = 0.33in,
+% %     ]{z.out}%
+% %   }
+% % }
+
+% % Define \MyIOT.
+% % Typset my input and output together on the same page.
+% % This doesn't work right:
+% %     o  Putting a \vbox around the input and output
+% %        does not allow todoindex entries to be listed.
+% %     o  Using \vfilneg at beginning and end of definition
+% %        screws up vertical spacing.
+% % \def\MyIOT
+% % {%
+% %   \vfilneg
+% %   % \vbox
+% %   {%
+% %     \input{z.out}%
+% %     \fontsize{8}{10}\tt
+% %     \VerbatimInput[
+% %       firstnumber = 1,
+% %       numbers     = left,
+% %       xleftmargin = 0.33in,
+% %     ]{z.out}%
+% %   }%
+% %   \FloatBarrier
+% %   \vfilneg
+% % }
+
+% % Define \NL (newline) so LaTeX goes to the next output line.
+% % Just doing \\ complains
+% %     ! LaTeX Error: There's no line here to end.
+% % \mbox{} is an empty math box.
+% \newcommand{\NL}{\mbox{}\\}
+
+% % Print a list of files used and their version numbers in the log file.
+% \listfiles

@@ -1,0 +1,41 @@
+
+%
+% This is only done if you are using BibLaTeX.
+%
+% \makeatletter  % commented out on 2022-01-26
+%   \defbibenvironment{bibliography}
+%     {%
+%       \list
+%         {%
+%           \printtext[labelnumberwidth]%
+%           {%
+%             \printfield{prefixnumber}%
+%             \printfield{labelnumber}%
+%           }%
+%         }%
+%         {%
+%           \setlength{\bibhang}{1in} %%%%% was 0pt
+%           \setlength{\itemindent}{1in}%  -\leftmargin} %%%%% was 0pt
+%           \setlength{\itemsep}{\bibitemsep}%
+%           \setlength{\leftmargin}{0pt}%  .22in} % 0.42in}
+%           \setlength{\parsep}{\bibparsep}%
+%            \setlength{\rightmargin}{0.33in}%
+%         }%
+%     }
+%     {\endlist}
+%     {\item}
+% \makeatother  % commented out on 2022-01-26
+
+
+
+% \immediate\setlength{\labelnumberwidth}{1.5in} %%%%% was commented out
+\setlength{\labelwidth}{1.5in}
+\def\sllnsez{[999] }
+
+{%
+  % Make _ in URLs visible.
+  % \def\t{\char'137}%
+  \catcode`*=\active
+  \def*{\char'137}%  \char'137 is _
+  \PrintBibliography
+}

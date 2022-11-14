@@ -1,0 +1,43 @@
+\ProvidesFile{pa-repeat.sty}[2021-06-09 repeat package]
+
+%  USAGE:
+%
+%    \MyRepeat{This is a sentence.}{10}
+%
+%    \MyRepeat{This is sentence \the\MyRepeatCount.}{10}
+%
+%    \newcommand{\fig}[1]
+%    {
+%      \begin{figure}[h]
+%        #1
+%        \caption{#1}
+%      \end{figure}
+%    }
+%
+
+\NeedsTeXFormat{LaTeX2e}
+
+\ProvidesClass{pa-repeat}[2021-06-09 pa-repeat]
+
+% Load expl3 if it is not already loaded.
+\usepackage{expl3}
+
+\ExplSyntaxOn
+
+  \int_new:N \MyRepeatCount
+  \int_new:N \MyRepeatMaxCount
+
+  % #1 is what to do each time.
+  % #2 is how many times to do it.
+  \newcommand{\MyRepeat}[2]{%
+    \int_set:Nn \MyRepeatCount     {1}
+    \int_set:Nn \MyRepeatMaxCount  {#2}
+    \bool_while_do:nn
+    {\int_compare_p:n { \MyRepeatCount <= \MyRepeatMaxCount } }
+    {
+      #1
+      \int_incr:N \MyRepeatCount
+    }
+  }
+
+\ExplSyntaxOff

@@ -1,0 +1,85 @@
+\ProvidesPackage{pa-logos.sty}[2022-10-05 logos package]
+
+% For \METAFONTLogo and \METAPOSTLogo.
+\font\tenlogo=logo10
+
+% From https://www.ams.org/arc/resources/amslatex-about.html
+%     There are two components to AMS-LaTeX: the document classes,
+%     and amsmath. They can be obtained separately if needed.
+% The amsmath package superseded AMS-LaTeX 1.1.  See page 34 of
+%     https://www.latex-project.org/help/documentation/amsldoc.pdf
+\def\AMSmathLogo{\textsf{AMS}\textsf{math}}
+
+% Based on information in hvlogos.sty.
+\DeclareRobustCommand\BibLaTeXLogo{Bib\LaTeXLogo}
+
+% Add a reference here later.
+\DeclareRobustCommand\BibTeXLogo{Bib\TeXLogo}
+
+% Based on information in hvlogos.sty.
+\DeclareRobustCommand\BiberLogo{\textsf{Biber}}
+
+% From https://www.ams.org/arc/resources/amslatex-about.html
+%     There are two components to AMS-LaTeX: the document classes,
+%     and amsmath. They can be obtained separately if needed.
+% From https://tex.stackexchange.com/questions/263449/how-to-display-the-word-ams-latex-in-latex
+%     just a random comment from the "home front": the ams staff finds the
+%     first part of that logo a bit too fussy, and are not using it for
+%     documents emerging from this office. just "AMS" (all caps) will do
+%     fine.
+%     ---barbara beeton Aug 27 '15 at 19:17
+%
+%     \usepackage{amsmath}
+%     \begin{document}
+%     \AmS-\LaTeX
+% Also see NonCalligraphicAMSLaTeXLogo.
+\def\CalligraphicAMSLaTeXLogo{\AmS-\LaTeX}
+
+% Based on information in
+%     https://ctan.math.illinois.edu/graphics/pgf/contrib/circuitikz/doc/circuitikzmanual.pdf
+\def\CircuiTikZLogo{Circui\TikZLogo}
+
+% Based on information in hvlogos.sty.
+\def\CTANLogo{\texttt{CTAN}\xspace}
+
+\def\LaTeXLogo{\LaTeX}
+
+\def\LuaLaTeXLogo{Lua\LaTeX}
+
+% Also see
+%     ~/sw/ubuntu-18.04-x86_64/texlive/2021//texmf-dist/tex/latex/mflogo/mflogo.sty
+\def\METAFONTLogo{{\tenlogo METAFONT}}
+
+% Also see
+%     ~/sw/ubuntu-18.04-x86_64/texlive/2021//texmf-dist/tex/latex/mflogo/mflogo.sty
+\def\METAPOSTLogo{{\tenlogo METAPOST}}
+
+\def\MetaPostLogo{MetaPost}
+
+% Also see \CalligraphicAMSLaTeXLogo.
+\def\NonCalligraphicAMSLaTeXLogo{\textsf{AMS}-\LaTeX}
+
+\def\PurdueThesisLogo{P\kern-0.15ex urdue\kern-0.05ex T\kern-0.1ex hesis}
+
+\def\PuThLogo{P\kern-0.15ex u\kern-0.05ex T\kern-0.1ex h}
+
+\def\TeXLogo{\TeX}
+
+\def\TeXLiveLogo{\TeX\ Live}
+
+% Based in information in hvlogos.sty.
+\providecommand\TeXUsersGroupLogo{\TeX{} Users Group}
+
+% Based in information in hvlogos.sty.
+\providecommand\TUGboatLogo{\textsl{TUGboat}}
+
+% From
+%     Re: Typesetting the TikZ logo
+%     Axel E. Retif
+%     2010-05-01
+%     21:12
+%     def\tikzname{Ti\emph{k}Z}
+% in
+%     http://pgf-and-tikz.10981.n7.nabble.com/Typesetting-the-TikZ-logo-td4045.html
+% \def\tikzname{Ti\emph{k}Z}
+\def\TikZLogo{Ti\emph{k}Z}

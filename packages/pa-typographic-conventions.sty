@@ -1,0 +1,51 @@
+\ProvidesFile{pa-typographic-conventions.sty}[2022-03-29 typographic conventions package]
+
+% See PurdueThesis/template/ch-introduction.tex for a description of the following.
+
+% For
+%     DESCRIPTION  COMMAND  EXAMPLE
+%     -----------  -------  -----------------------------------------------------------------------
+%     emphasize    \Emph    You \Emph{must} do this.
+%     first use    \First   ...was installed in an \First{ekayak}.  An ekayak is an electric kayak.
+%     title        \Title   \Title{The Grapes of Wrath}
+\usepackage{cprotect}
+\let\Emph  = \emph
+\let\First = \emph
+\let\Title = \emph
+
+% For
+%     DESCRIPTION                COMMAND  EXAMPLES
+%     -------------------------  -------  -------------------------------------
+%     pictures of keyboard keys  \Keys    \Keys{A} \Keys{B}, \Keys{Control + A}
+%     pictures of menus          \Menu    \Menu{Open menu > Preferences}
+% \usepackage[roundedmenus,roundedkeys]{menukeys}
+\usepackage{menukeys}
+\let\Keys = \keys
+\let\Menu = \menu
+
+% For
+%     DESCRIPTION            EXAMPLES
+%     -----------            -----------------------------------------------------------------
+%     checkboxes             make sure the \Literal{Use smooth scrolling} checkbox is checked.
+%     code                   \Literal{a = b + c}
+%     code fragments         \Literal{b + c}
+%     environment variables  \Literal{$HOME}
+%     file names             \Literal{fn.tmp}
+%     LaTeX input            \Literal{If $a = b$ and $b = c$ then $a = c$.}
+%     output                 \Literal{Hello, world}
+%     verbatim input*        \Literal{a b c}
+%     verbatim output        \Literal{Hello, world}
+%     *except for commands typed on the command line
+\let\Literal = \verb
+
+% For
+%     DESCRIPTION   EXAMPLES
+%     ------------  ----------------
+%     place holder  \Place{filename}  
+\newcommand{\Place}[1]{\textsl{#1}}
+
+% For
+%     DESCRIPTION                    EXAMPLES
+%     -----------------------------  --------
+%     command typed on command line  \Shell{cat filename.txt}
+\newcommand{\Shell}[1]{{\ttfamily\bfseries #1}}

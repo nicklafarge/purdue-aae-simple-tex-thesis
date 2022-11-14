@@ -1,0 +1,65 @@
+
+\chapter{INTRODUCTION}
+Experimenting with the available typographic conventions defined in the Purdue file: \NL \Literal|pa-typographic-conventions.sty|:  these include \Emph{Emph} \First{First} \First{Title} \Keys{Keys} \Literal|Literal| \Menu{Menu} \Menu{Open menu > Preferences} \Shell{Shell.sh}. Now let's try out a footnote\footnote{I'm a footnote!}, one of the fancy TODO notes  \todocomment{Do I really need this?}, and more scary TODO \todowarn{Be careful here}, as well as a a todo error \todoerror{This is wrong!} as well as a citation \cite{Howell:1984_HaloOrbits}. Note the TODO comments currently only show up in \Literal|quick| or \Literal|debug| modes (for now).
+
+
+\section{Subcaption / Cleveref Testing}
+Here is a very important and informative figure for Orion. You can see in \cref{fig:orion} that there is both \cref{fig:orion:a} and \cref{fig:orion:b}! There is also important information in \cref{tab:sample_table}. If you're confused, then \cref{eq:euler} should clarify things. Some other ways to put it: \cref{eq:euler,eq:pythagorean} and \cref{eq:euler,eq:pythagorean,eq:calculus}. 
+
+\begin{figure}[p]
+    \centering
+    \begin{subcaptionblock}{.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{orion1}
+        \caption{Orion 1}
+        \label{fig:orion:a}
+    \end{subcaptionblock} %
+    \begin{subcaptionblock}{.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{orion2}
+        \caption{Orion 2}
+        \label{fig:orion:b}
+    \end{subcaptionblock} %
+    \caption{Two images of Orion: \subref{fig:orion:a} and \subref{fig:orion:b}.}
+    \label{fig:orion}
+\end{figure}
+
+\begin{table}[p]
+    \centering
+    \caption{Sample Table}
+    \begin{tabular}{|c|c|}
+    \hline
+        Sample & Table\\
+        $x$ & 2\\
+    \hline
+    \end{tabular}
+    \label{tab:sample_table}
+\end{table}
+
+\subsection{Important Math}
+
+\begin{equation}
+    e^{i\pi}+1=0
+    \label{eq:euler}
+\end{equation}
+
+\begin{equation}
+    a^2+b^2=c^2
+    \label{eq:pythagorean}
+\end{equation}
+
+\begin{equation}
+    \frac{df}{dt} = \lim_{h\rightarrow 0} \frac{f(t+h)-f(t)}{h}
+    \label{eq:calculus}
+\end{equation}
+
+\subsection{Numbers/Units}
+Some of the number formats available: \num{-e10}. \numproduct{2 x 4}. \numrange{10}{11}. \ang{12.3}.
+
+Experimenting with the siunits package: 8 \unit{\kilo\gram\metre\per\square\second}. 9\unit{\newton}. \qty{2.3e27}{\kilogram}. \qty[per-mode = fraction]{1,345}{\coulomb\per\mole}.
+
+\subsubsection{A subsubsection} 
+A subsubsection for testing out the table of contents
+
+\paragraph{A paragraph}
+What happens for a paragraph in the table of contents?

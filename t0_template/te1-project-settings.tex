@@ -1,0 +1,36 @@
+% \graphicspath{{eps/}{tiff/}}
+\graphicspath{{figures/}{figures/template}}
+
+% Look in the "packages" subfolder for packages.
+% This is done to reduce the number of files in the main thesis folder
+% so the ones in there are easier to find.
+\makeatletter
+  \def\input@path{{packages/}}
+\makeatother
+
+% The vertical space between a table heading and the table contents in a tabular environment.
+\newcommand{\tabularspace}{\noalign{\vspace*{2pt}}}
+
+% Define boolean variables that contorl how the document is compiled
+\newboolean{quick}
+\newboolean{debug}
+\newboolean{proof}
+\newboolean{final}
+\newboolean{quick-or-debug}
+\newboolean{proof-or-final}
+
+\ifthenelse{\equal{\ZZbuildmode}{quick}}
+    {\setboolean{quick}{true}}{\setboolean{quick}{false}}
+\ifthenelse{\equal{\ZZbuildmode}{debug}}
+    {\setboolean{debug}{true}}{\setboolean{debug}{false}}
+\ifthenelse{\equal{\ZZbuildmode}{proof}}
+    {\setboolean{proof}{true}}{\setboolean{proof}{false}}
+\ifthenelse{\equal{\ZZbuildmode}{final}}
+    {\setboolean{final}{true}}{\setboolean{final}{false}}
+
+\ifthenelse{\boolean{quick} \OR \boolean{debug}}
+  {\setboolean{quick-or-debug}{true}}
+  {\setboolean{quick-or-debug}{false}}
+\ifthenelse{\boolean{proof} \OR \boolean{final}}
+  {\setboolean{proof-or-final}{true}}
+  {\setboolean{proof-or-final}{false}}

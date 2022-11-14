@@ -1,0 +1,33 @@
+\ProvidesFile{pa-figure-dash.sty}[2021-01-04 figure dash package]
+
+%
+%  Type
+%      \usepackage{pa-figure-dash}
+%      {
+%          \def\-{\FigureDash}
+%          765\-474\-2820
+%      }
+%  to print
+%      765-474-2820
+%  with hyphens the same width as digits.
+%
+
+\newbox\figurebox
+
+\newlength{\lenfigurerulethickness}
+\newlength{\lenfigureraiseheight}
+\newlength{\lenfigurerulewidth}
+
+\newcommand{\FigureDash}
+{%
+  % thickness
+  \setlength{\lenfigurerulethickness}{0.4pt}%
+  % raise height
+  \setlength{\lenfigureraiseheight}%
+    {{\heightof{8}/2} - {\lenfigurerulethickness/2}}%
+  % width
+  \setlength{\lenfigurerulewidth}{\widthof{8} - 2pt}%
+  \hspace*{1pt}%
+  \rule[\lenfigureraiseheight]{\lenfigurerulewidth}{\lenfigurerulethickness}%
+  \hspace*{1pt}%
+}

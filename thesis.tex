@@ -1,0 +1,48 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Preamble 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Select build mode from:
+%     quick - try to compile quickly (no extras)
+%     debug - add grid lines/compile times
+%     proof - local version of "final" 
+%     final - Final publishable version (need LuaLaTeX)
+%               NOTE: final should probably replace the documentclass to be 
+% .                    PurdueThesis (not currently handled automatically) 
+\def\ZZbuildmode{proof}
+
+% Input arguments required by PurdueThesis
+\input{t0_template/te00-template-options.tex}
+
+% Build the document (manually choose between official and local template)
+% \documentclass{PurdueThesis}
+\documentclass{PurdueThesisNL}
+
+% Set up the latex document w/ imports, definitions, and template customizations
+\input{t0_template/te0-template.tex}
+
+% TODO: not sure if everything should use \input
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Ducument 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+
+\begin{document}
+\setcounter{tocdepth}{3}
+\maketitle
+
+% Front matter (title, acknowledgements, abstract, etc)
+\input{t1_front/fr0_front.tex}
+
+% Input all chapters here
+\input{ch1-intro/ch1-intro.tex}
+\input{ch2-background/ch2-background.tex}
+% ...
+
+% Appendices
+\input{ch8_appendices/ap0-appendices.tex}
+
+% Back content (vita, bib settings, etc.)
+\input{t3_back/bk0-end.tex}
+
+\end{document}

@@ -1,0 +1,53 @@
+% Might be worth replacing the official bibliography configuration (currently maybe don't worry about it...)
+% Configure bibliography.
+% This is the import for aero/astro
+%     \usepackage[...]{biblatex}
+%
+% To override the default choices picked by \ConfigureBibliography, change,
+% for example,
+%     \ConfigureBibliography
+% to
+%     % \ConfigureBibliography
+% \newcommand{\ZZBibProcessor}{BibLaTeX}
+\newcommand{\testBackend}{bibtex}
+\usepackage[backend=\testBackend, citestyle=numeric-comp, dashed=false, locallabelwidth=true, sortcites=true, style=ieee]{biblatex}
+\addbibresource{99_back/citations.bib}
+% See
+% https://tex.stackexchange.com/questions/134191/line-breaks-of-long-urls-in-biblatex-bibliography
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+% \usepackage[backend=biber, citestyle=apa, dashed=false, sortcites=true, style=apa]{biblatex}
+% \addbibresource{all-biblatex.bib}
+% \ConfigureBibliography
+          % \usepackage[backend=biber, citestyle=numeric-comp, dashed=false, locallabelwidth=true, sortcites=true, style=ieee]{biblatex}
+
+
+%
+% This is only done if you are using BibLaTeX.
+%
+%
+% If you don't want to ignore urldate fields,
+% comment out (put "%" before) the next ten lines.
+%
+\DeclareSourcemap
+  {
+    \maps[datatype=bibtex]
+    {
+      % Ignore "urldate = {...}" in .bib files.
+      % See the first complete example on page 201 of
+      %     https://mirrors.rit.edu/CTAN/macros/latex/contrib/biblatex/doc/biblatex.pdf
+      \map
+        {
+          \step[fieldset=urldate, null]
+        }
+        % Enter approximate (circa) dates using, for example,
+        % "year = c2020"  See
+        %     https://tex.stackexchange.com/questions/224617/what-is-the-correct-way-to-handle-approximate-dates-in-biblatex
+      \map[overwrite=false]
+        {
+          \step[fieldsource=year]
+          \step[fieldset=sortyear, origfieldval, final]
+          \step[fieldsource=sortyear, match={c}, replace={}]
+        }
+    }
+  }
