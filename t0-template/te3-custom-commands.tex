@@ -29,7 +29,9 @@
 %       #3: (optional) font class (e.g. \mathbb )
 \NewDocumentCommand{\varDef}{m m o} {
     \IfValueTF{#3}{\newcommand{#1}{#3{#2}}}{\newcommand{#1}{#2}}
-    \storeVariables{#1}{#2}
+    % Only store variables if needed for debug mode
+    \ifthenelse{\equal{debug}{\ZZbuildmode}} {
+        \storeVariables{#1}{#2}}{}
     }
 
 

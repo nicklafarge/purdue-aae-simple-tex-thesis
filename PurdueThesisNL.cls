@@ -1,46 +1,10 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{PurdueThesisNL}[2022-10-05 Purdue this (LaFargeUpdate: 11/12)]
-\newcommand{\PurdueThesisVersion}{PurdueThesis 2022-10-05}
-% REFERENCES
-%   [PU]
-%     I forget what this is off-hand.
-%   [TCMOS17]
-%     The Chicago Manual of  Style Online,
-%     17th edition.
-%     https://www.chicagomanualofstyle.org/home.html,
-%     retrieved on 2020-02-29.
-%   [TEMPLATE1]
-%     Template-One.docx Microsoft Word thesis template,
-%     Thesis & Dissertation Office,
-%     The Graduate School,
-%     Purdue University.
-%     https://www.purdue.edu/gradschool/documents/thesis/Template-One.docx,
-%     retrieved on 2020-08-25.
-%   [TEMPLATE2]
-%     Template-Two.docx Microsoft Word thesis template,
-%     Thesis & Dissertation Office,
-%     The Graduate School,
-%     Purdue University.
-%     https://www.purdue.edu/gradschool/documents/thesis/Template-Two.docx,
-%     retrieved on 2020-08-25.
-%   [TEMPLATE3]
-%     Template-Three.docx Microsoft Word thesis template,
-%     Thesis & Dissertation Office,
-%     The Graduate School,
-%     Purdue University.
-%     https://www.purdue.edu/gradschool/documents/thesis/Template-Three.docx,
-%     retrieved on 2020-08-25.
-%   [WEB9]
-%     Webster's Ninth New Collegiate Dictionary.
-%
-
-% UNICODE    GLYPH    UNICODE NAME                COMMENT
-% U+25AF     ~        BLACK VERTICAL RECTANGLE    I use this to print a visible space between \ExplSyntaxOn and \ExplSyntaxOff.
+\ProvidesClass{PurdueThesisNL}[2022-10-05 Purdue thesis (LaFarge Update: 11/12)]
+\newcommand{\PurdueThesisVersion}{PurdueThesis 2022-10-05-NLv1}
 
 \LoadClass[12pt]{report}[2019/12/20]
 \def\contentsname{TABLE OF CONTENTS}
 \newlength{\ZZlengtha}
-
 
 
 
@@ -51,8 +15,8 @@
 %      Added by Nick LaFarge (11/12/2022)
 % To enable a "quick" build process that doesn't need 
 % LuaTeX or XeTeX by removing the fontspec dependency
-\usepackage{ifthen}
 \newboolean{usefontspec}
+\usepackage{ifthen}
 \RequirePackage{xkeyval}
 
 % Set default values
@@ -277,6 +241,7 @@
 % Use LaTeX 3 programming constructs in LaTeX 2e.
 % See
 %     https://ctan.math.illinois.edu/macros/latex/contrib/l3kernel/interface3.pdf
+
 \ExplSyntaxOn
   \cs_generate_variant:Nn \prop_get:NnNTF {NV}
   \cs_generate_variant:Nn \regex_match:nnTF {nV}

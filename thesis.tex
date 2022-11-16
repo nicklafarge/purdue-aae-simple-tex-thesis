@@ -1,34 +1,36 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-% Preamble 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+% Preamble Options
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Select build mode from:
 %     quick - try to compile quickly (no extras)
 %     debug - add grid lines/compile times
 %     proof - local version of "final" 
-%     final - Final publishable version (need LuaLaTeX)
-%               NOTE: final should probably replace the documentclass to be 
-% .                    PurdueThesis (not currently handled automatically) 
+%     final - Final publishable version (requires LuaLaTeX)
 \def\ZZbuildmode{debug}
 
 % Input arguments required by PurdueThesis
 \input{t0-template/te00-template-options.tex}
 
-% Build the document (manually choose between official and local template)
-% \documentclass{PurdueThesis}
-\documentclass{PurdueThesisNL}
+% Build the document this will select the document class based on :
+%    quick/debug/proof - Local simplified PurdueTheiss.cls file
+%                final - Official PurdueThesis.cls file
+\RequirePackage{ifthen}
+\ifthenelse{\equal{\ZZbuildmode}{final}}
+{\documentclass{PurdueThesis}}{\documentclass{PurdueThesisNL}}
 
-% Set up the latex document w/ imports, definitions, and template customizations
+% Set up the latex document w/ imports, definitions, and 
+% template customizations
 \input{t0-template/te0-template.tex}
 
 % TODO: not sure if everything should use \input
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 % Ducument 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{document}
-% \setcounter{tocdepth}{3} % Might need this for the official template?
+
 \maketitle
 
 % Front matter (title, acknowledgements, abstract, etc)

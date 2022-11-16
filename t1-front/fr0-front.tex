@@ -16,3 +16,7 @@
 
 % Always include the abstract
 \input{t1-front/fr5-abstract.tex}
+
+% For the official template
+% \setcounter{tocdepth}{3} % Might need this for the official template?
+\ifthen{\equal{\ZZbuildmode}{final}}{\setcounter{tocdepth}{3}}

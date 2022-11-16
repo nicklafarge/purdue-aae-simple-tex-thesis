@@ -1,4 +1,7 @@
 \chapter*{User-Defined Variables}
+\begin{center}
+    \textit{Note: Currently does not support Greek letter sorting}
+\end{center}
 
 % Create database for the user-defined variables
 \DTLnewdb{varDB}
@@ -12,9 +15,7 @@
         \ifthenelse{\equal{\i}{1}}{
             \DTLnewdbentry{varDB}{Variable}{\cmd}
             \DTLnewdbentry{varDB}{VarCmd}{\expandafter\string\cmd}
-        }{
-            \DTLnewdbentry{varDB}{SortVar}{\cmd}
-        }
+        }{\DTLnewdbentry{varDB}{SortVar}{\cmd}}
     }
 }
 % Sort the database based on the SortVar entry
