@@ -7,10 +7,10 @@
 %     debug - add grid lines/compile times (print variables)
 %     proof - local version of "final" 
 %     final - Final publishable version (calls PurdueThesis - requires LuaLaTeX)
-\def\ZZbuildmode{debug}
+\def\ZZbuildmode{proof}
 
 % Input arguments required by PurdueThesis
-\input{t0-template/te00-template-options.tex}
+\input{a-template/te00-template-options.tex}
 
 % Build the document this will select the document class based on :
 %    quick/debug/proof - Local simplified PurdueTheiss.cls file
@@ -21,7 +21,7 @@
 
 % Set up the latex document w/ imports, definitions, and 
 % template customizations
-\input{t0-template/te0-template.tex}
+\input{a-template/te0-template.tex}
 
 % TODO: not sure if everything should use \input
 
@@ -33,7 +33,7 @@
 \maketitle
 
 % Front matter (title, acknowledgements, abstract, etc)
-\input{t1-front/fr0-front.tex}
+\input{b-front/fr0-front.tex}
 
 % Input all chapters here
 \input{ch1-intro/in0-intro.tex}
@@ -44,6 +44,6 @@
 \input{ch8-appendices/ap0-appendices.tex}
 
 % Back content (vita, bib settings, etc.)
-\input{t3-back/bk0-end.tex}
+\input{d-back/bk0-end.tex}
 
 \end{document}
