@@ -1,5 +1,6 @@
 
-
+% Define useful variables of the form:
+%    \vardef{\command}{var-name}[\format] 
 
 \varDef{\zNd}{z}
 \varDef{\xNd}{x}
@@ -12,10 +13,32 @@
 \varDef{\angleFour}{\Pi}
 \varDef{\angleThree}{\Gamma}
 \varDef{\otherCvar}{C}
+\varDef{\nBody}{N}
+
+% Math
 \varDef{\Real}{R}[\mathbb]
 \varDef{\Complex}{C}[\mathbb]
 
+% Stats
+\varDef{\Normal}{N}[\mathcal]
+\varDef{\Uniform}{U}[\mathcal]
+\varDef{\ExpVal}{E}[\mathbb]
 
+% Dynamical Systems
+\varDef{\lagrangian}{L}[\mathcal]
+\varDef{\hamiltonian}{H}[\mathcal]
+
+% To show how formatting is handled
+\varDef{\vectorFormat}{x}[\vectorFmt]
+\varDef{\unitVectorFormat}{x}[\unitVecFmt]
+\varDef{\velocityFormat}{x}[\firstDerivative]
+\varDef{\accelFormat}{x}[\secondDerivative]
+
+% How about superscripts
+\varDef{\xSquared}{x}^{2}
+\varDef{\xSubTwo}{x}_{2}
+\varDef{\xSubTwoSquared}{x}_{2}^{2}
+\varDef{\aVectorSquared}{y}[\vectorFmt]^{2}
 
 % Create / sort database of paper variables for debugging
 % \DTLnewdb{varDB}
