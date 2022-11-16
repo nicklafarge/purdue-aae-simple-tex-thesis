@@ -2,6 +2,7 @@
 % Define useful variables of the form:
 %    \vardef{\command}{var-name}[\format] 
 
+% Testing out some basic ones
 \varDef{\zNd}{z}
 \varDef{\xNd}{x}
 \varDef{\yNd}{y}
@@ -31,23 +32,9 @@
 % To show how formatting is handled
 \varDef{\vectorFormat}{x}[\vectorFmt]
 \varDef{\unitVectorFormat}{x}[\unitVecFmt]
+
 % How about superscripts?
 \varDef{\xSquared}{x}^{2}
 \varDef{\xSubTwo}{x}_{2}
 \varDef{\xSubTwoSquared}{x}_{2}^{2}
 \varDef{\aVectorSquared}{y}[\vectorFmt]^{2}
-
-% Create / sort database of paper variables for debugging
-% \DTLnewdb{varDB}
-% \foreach \cmd [count=\i] in \paperVariables { 
-%     \DTLnewrow{varDB}
-%     \dtlexpandnewvalue
-%     \DTLnewdbentry{varDB}{Variable}{\cmd}
-%     \DTLnewdbentry{varDB}{SortVar}{x}
-%     \DTLnewdbentry{varDB}{VarCmd}{\expandafter\string\cmd}
-% }
-% Sort list
-% \DTLsort{SortVar}{varDB}
-
-% Database part is inspired from:
-%  https://tex.stackexchange.com/questions/121489/alphabetically-display-the-items-in-itemize
