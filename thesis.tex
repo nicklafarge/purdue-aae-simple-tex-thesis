@@ -3,10 +3,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Select build mode from:
-%     quick - try to compile quickly (no extras)
-%     debug - add grid lines/compile times
+%     quick - try to compile quickly (no extras, remove front pages)
+%     debug - add grid lines/compile times (print variables)
 %     proof - local version of "final" 
-%     final - Final publishable version (requires LuaLaTeX)
+%     final - Final publishable version (calls PurdueThesis - requires LuaLaTeX)
 \def\ZZbuildmode{debug}
 
 % Input arguments required by PurdueThesis
@@ -30,7 +30,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{document}
-
 \maketitle
 
 % Front matter (title, acknowledgements, abstract, etc)
