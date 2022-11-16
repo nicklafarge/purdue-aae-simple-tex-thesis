@@ -1,6 +1,6 @@
 
 % Only include these sections if this is a proof or final version
-\ifthenelse{\boolean{proof-or-final}}{
+\ifthenelse{\boolean{quick}}{}{
     \input{t1-front/fr1-comittee.tex}
     \input{t1-front/fr2-dedication.tex}
     \input{t1-front/fr3-acknowledgments.tex}
@@ -10,7 +10,7 @@
     \tableofcontents
     \listoftables
     \listoffigures
-}{}
+}
 
 % Optional: Symbols, Abbreviations, Nomenclature, Glossary
 
