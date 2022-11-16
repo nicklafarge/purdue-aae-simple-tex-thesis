@@ -1,0 +1,26 @@
+\chapter*{User-Defined Variables}
+
+% Create database for the user-defined variables
+\DTLnewdb{varDB}
+
+% Populate database with variables, command,
+%  and variables by which to srt them
+\foreach \tuple in \paperVariables { 
+    \DTLnewrow{varDB}
+    \foreach \cmd [count=\i] in \tuple {
+        \dtlexpandnewvalue
+        \ifthenelse{\equal{\i}{1}}{
+            \DTLnewdbentry{varDB}{Variable}{\cmd}
+            \DTLnewdbentry{varDB}{VarCmd}{\expandafter\string\cmd}
+        }{
+            \DTLnewdbentry{varDB}{SortVar}{\cmd}
+        }
+    }
+}
+% Sort the database based on the SortVar entry
+\DTLsort{SortVar}{varDB}
+
+% Print out the sorted variables
+\DTLforeach*{varDB}{\variable=Variable, \cmd=VarCmd, \sv=SortVar}{%
+\noindent $\variable$: \cmd\\
+}

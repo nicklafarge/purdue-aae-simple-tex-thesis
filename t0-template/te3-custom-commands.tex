@@ -1,0 +1,41 @@
+
+
+% Define \NL (newline) so LaTeX goes to the next output line.
+% Just doing \\ complains
+%     ! LaTeX Error: There's no line here to end.
+% \mbox{} is an empty math box.
+\newcommand{\NL}{\mbox{}\\}
+
+
+
+% To keep track of variables used in the document
+%    for optional printing when in debug mode
+\makeatletter
+    \newcommand*\paperVariables{}
+    \newcommand*\paperSortVars{}
+    \newcommand*\storeVariables[2]
+    {\ifx\paperVariables\empty
+        \def\paperVariables{{#1,#2}}%
+    \else
+        \g@addto@macro\paperVariables{, {#1,#2}}%
+    \fi
+    }
+    \makeatother
+    
+
+% Use \varDef instead of \newCommand to track variables for debug mode
+%       #1: latex command to call to create the variable (e.g. \myAngle)
+%       #2: symbol to use (e.g. a, A, \alpha)
+%       #3: (optional) font class (e.g. \mathbb )
+\NewDocumentCommand{\varDef}{m m o} {
+    \IfValueTF{#3}{\newcommand{#1}{#3{#2}}}{\newcommand{#1}{#2}}
+    \storeVariables{#1}{#2}
+    }
+
+
+% Vector formatting
+\newcommand{\vectorFmt}[1]{\pmb{#1}}
+\newcommand{\unitVecFmt}[1]{\hat{#1}}
+\newcommand{\sub}[2]{{#1}_{#2}}
+\newcommand{\upRight}[2]{{#1}^{#2}}
+\newcommand{\upLeft}[2]{{}^{#2} {#1}}
